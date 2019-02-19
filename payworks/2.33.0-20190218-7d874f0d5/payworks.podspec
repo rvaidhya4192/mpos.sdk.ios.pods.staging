@@ -36,6 +36,13 @@ Pod::Spec.new do |spec|
                 vipa.dependency            'payworks/mpos/comlinks/tcp'
             end
 
+            accessories.subspec 'ingenico' do |ingenico|
+                ingenico.vendored_frameworks = 'mpos_accessories_ingenico.framework'
+                ingenico.vendored_frameworks = 'mpos_accessories_ingenico_common.framework'
+                ingenico.dependency            'payworks/mpos/core'
+                ingenico.dependency            'payworks/mpos/comlinks/tcp'
+            end
+
         end
 
         mpos.subspec 'comlinks' do |comlinks|
