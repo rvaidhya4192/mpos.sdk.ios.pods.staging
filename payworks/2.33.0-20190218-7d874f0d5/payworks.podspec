@@ -37,8 +37,7 @@ Pod::Spec.new do |spec|
             end
 
             accessories.subspec 'ingenico' do |ingenico|
-                ingenico.vendored_frameworks = 'mpos_accessories_ingenico.framework'
-                ingenico.vendored_frameworks = 'mpos_accessories_ingenico_common.framework'
+                ingenico.vendored_frameworks = 'mpos_accessories_ingenico.framework', 'mpos_accessories_ingenico_common.framework'
                 ingenico.dependency            'payworks/mpos/core'
                 ingenico.dependency            'payworks/mpos/comlinks/tcp'
             end
