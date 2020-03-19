@@ -70,11 +70,11 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'default' do |default|
 
-        all.dependency 'payworks/mpos/core'
-        all.dependency 'payworks/mpos/core/accessories/miura'
-        all.dependency 'payworks/mpos/core/accessories/vipa'
-        all.dependency 'payworks/mpos/core/comlinks/externalaccessory'
-        all.dependency 'payworks/mpos/core/comlinks/tcp'
+        default.dependency 'payworks/mpos/core'
+        default.dependency 'payworks/mpos/core/accessories/miura'
+        default.dependency 'payworks/mpos/core/accessories/vipa'
+        default.dependency 'payworks/mpos/core/comlinks/externalaccessory'
+        default.dependency 'payworks/mpos/core/comlinks/tcp'
     end
 
     spec.subspec 'offline' do |offline|
