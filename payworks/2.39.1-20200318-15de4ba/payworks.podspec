@@ -66,16 +66,17 @@ Pod::Spec.new do |spec|
                 externalaccessory_ingenico.dependency            'payworks/mpos/core'
             end  
         end
+
+        mpos.subspec 'default' do |default|
+
+            default.dependency 'payworks/mpos/core'
+            default.dependency 'payworks/mpos/core/accessories/miura'
+            default.dependency 'payworks/mpos/core/accessories/vipa'
+            default.dependency 'payworks/mpos/core/comlinks/externalaccessory'
+            default.dependency 'payworks/mpos/core/comlinks/tcp'
+        end
     end
 
-    spec.subspec 'default' do |default|
-
-        default.dependency 'payworks/mpos/core'
-        default.dependency 'payworks/mpos/core/accessories/miura'
-        default.dependency 'payworks/mpos/core/accessories/vipa'
-        default.dependency 'payworks/mpos/core/comlinks/externalaccessory'
-        default.dependency 'payworks/mpos/core/comlinks/tcp'
-    end
 
     spec.subspec 'offline' do |offline|
 
