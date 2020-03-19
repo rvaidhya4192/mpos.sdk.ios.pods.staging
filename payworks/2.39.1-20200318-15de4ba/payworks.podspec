@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.platform           = :ios, '8.0'
     spec.requires_arc       = true
     spec.source             = { :http => 'https://releases.payworks.io/artifactory/mpos-ios-staging/io/payworks/mpos.ios.sdk/'+spec.version.to_s+'/mpos.ios.sdk-'+spec.version.to_s+'.zip' }
-    spec.default_subspec       = 'default'
+    spec.default_subspec       = 'mpos/default'
 
     spec.subspec 'mpos' do |mpos|
 
