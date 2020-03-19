@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.platform           = :ios, '8.0'
     spec.requires_arc       = true
     spec.source             = { :http => 'https://releases.payworks.io/artifactory/mpos-ios-staging/io/payworks/mpos.ios.sdk/'+spec.version.to_s+'/mpos.ios.sdk-'+spec.version.to_s+'.zip' }
-    spec.default_subspec       = 'mpos'
+    spec.default_subspec       = 'default'
 
     spec.subspec 'mpos' do |mpos|
 
@@ -45,7 +45,6 @@ Pod::Spec.new do |spec|
                 ingenico.dependency            'payworks/mpos/comlinks/tcp'
                 ingenico.dependency            'payworks/mpos/comlinks/externalaccessory-ingenico'
             end
-
         end
 
         mpos.subspec 'comlinks' do |comlinks|
@@ -66,16 +65,21 @@ Pod::Spec.new do |spec|
                 externalaccessory_ingenico.dependency            'payworks/mpos/comlinks/tcp'
                 externalaccessory_ingenico.dependency            'payworks/mpos/core'
             end  
-
         end
+    end
 
+    spec.subspec 'default' do |default|
+
+        all.dependency 'payworks/mpos/core'
+        all.dependency 'payworks/mpos/core/accessories/miura'
+        all.dependency 'payworks/mpos/core/accessories/vipa'
+        all.dependency 'payworks/mpos/core/comlinks/externalaccessory'
+        all.dependency 'payworks/mpos/core/comlinks/tcp'
     end
 
     spec.subspec 'offline' do |offline|
 
         offline.dependency 'couchbase-lite-ios', '~> 1.4.1'
         offline.dependency 'payworks/mpos'
-
     end
-
 end
