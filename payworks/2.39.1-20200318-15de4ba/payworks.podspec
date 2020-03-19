@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.platform           = :ios, '8.0'
     spec.requires_arc       = true
     spec.source             = { :http => 'https://releases.payworks.io/artifactory/mpos-ios-staging/io/payworks/mpos.ios.sdk/'+spec.version.to_s+'/mpos.ios.sdk-'+spec.version.to_s+'.zip' }
-    spec.default_subspec       = 'mpos/default'
+    spec.default_subspec       = 'default'
 
     spec.subspec 'mpos' do |mpos|
 
@@ -66,15 +66,16 @@ Pod::Spec.new do |spec|
                 externalaccessory_ingenico.dependency            'payworks/mpos/core'
             end  
         end
+    end
 
-        mpos.subspec 'default' do |default|
 
-            default.dependency 'payworks/mpos/core'
-            default.dependency 'payworks/mpos/core/accessories/miura'
-            default.dependency 'payworks/mpos/core/accessories/vipa'
-            default.dependency 'payworks/mpos/core/comlinks/externalaccessory'
-            default.dependency 'payworks/mpos/core/comlinks/tcp'
-        end
+    spec.subspec 'default' do |default|
+
+        default.dependency 'payworks/mpos/core'
+        default.dependency 'payworks/mpos/accessories/miura'
+        default.dependency 'payworks/mpos/accessories/vipa'
+        default.dependency 'payworks/mpos/comlinks/externalaccessory'
+        default.dependency 'payworks/mpos/comlinks/tcp'
     end
 
 
